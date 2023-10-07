@@ -1,2 +1,4 @@
 .idea
 env
+Pastebin/.env
+Pastebin/__pycache__
