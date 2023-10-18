@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'APIService.apps.ApiserviceConfig',
+
+    # sequence for unique urls
+    'sequences.apps.SequencesConfig',
 ]
 
 MIDDLEWARE = [
