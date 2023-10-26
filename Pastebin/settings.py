@@ -46,6 +46,9 @@ INSTALLED_APPS = [
 
     # sequence for unique urls
     'sequences.apps.SequencesConfig',
+
+    # django-extensions (used for 'shell_plus' escalation)
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
