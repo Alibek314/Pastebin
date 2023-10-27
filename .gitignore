@@ -2,3 +2,4 @@
 env
 Pastebin/.env
 Pastebin/__pycache__
+APIService/__pycache__
