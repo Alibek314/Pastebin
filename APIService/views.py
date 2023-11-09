@@ -1,4 +1,3 @@
-from django.forms import model_to_dict
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
@@ -35,4 +34,4 @@ def single_post(request, post_url):
     Simply returns text for requested url
     """
     text = get_object_or_404(Text, url=post_url)
-    return Response(TextSerializer(text).data)
+    return Response({"Text": TextSerializer(text).data["content"]})

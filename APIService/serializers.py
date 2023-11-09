@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Text
+# Create your serializers here
 
 
 class TextSerializer(serializers.ModelSerializer):
