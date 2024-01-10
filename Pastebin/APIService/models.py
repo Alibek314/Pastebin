@@ -27,4 +27,4 @@ class Text(models.Model):
             self.url = uniq_url
             return f'New URL {self.url}'
         else:
-            return f'This object already have URL - {self.url}'
+            return f'This object already has URL - {self.url}'

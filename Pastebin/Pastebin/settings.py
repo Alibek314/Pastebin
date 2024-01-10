@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 
 # Application definition
 
@@ -46,8 +46,11 @@ INSTALLED_APPS = [
     # sequence for unique urls
     'sequences.apps.SequencesConfig',
 
-    # django-extensions (used for 'shell_plus' escalation)
+    # django-extensions (used for 'shell_plus' extension)
     'django_extensions',
+
+    # this module provides integration with postgres DB (for runin django&postgres in docker)
+    'django.contrib.postgres'
 ]
 
 MIDDLEWARE = [
@@ -91,7 +94,7 @@ DATABASES = {
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASS'),
         'HOST': env('DB_HOST'),
-        'PORT': 54321
+        'PORT': 54321,
     }
 }
 
@@ -135,3 +138,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:16379/0'

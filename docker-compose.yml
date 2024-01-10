@@ -9,16 +9,23 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_USER: postgres
       POSTGRES_DB: pastebindb
+      PGDATA: /postgresdata
+      POSTGRES_INIT_ARGS: "-A md5"
     ports:
       - "54321:5432"
-  django:
-    container_name: django
-    build:
-      context: ./Pastebin
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./Pastebin:/usr/src/app/
-    ports:
-      - "8001:8000"
-    environment:
-      - ALLOWED_HOSTS=localhost,127.0.0.1
+#  django:
+#    container_name: django
+#    build:
+#      context: ./Pastebin
+#    command: python manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - ./Pastebin:/usr/src/app/
+#    ports:
+#      - "8001:8000"
+#    environment:
+#      POSTGRES_PASSWORD: 1234
+#      POSTGRES_USER: postgres
+#      POSTGRES_DB: pastebindb
+#      POSTGRES_INIT_ARGS: "-A md5"
+#    depends_on:
+#      - db
